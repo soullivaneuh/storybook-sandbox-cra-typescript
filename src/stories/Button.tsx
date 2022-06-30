@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { DOMAttributes } from 'react';
 import './button.css';
 
-interface ButtonProps {
+type ButtonProps =
+  & Pick<DOMAttributes<unknown>, 'onClick'>
+  & {
   /**
    * Is this the principal call to action on the page?
    */
@@ -18,10 +20,6 @@ interface ButtonProps {
    * Button contents
    */
   label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
 }
 
 /**
